@@ -11,7 +11,7 @@
         <li><a href="#projects" :class="{ active: activeSection === 'projects' }">Projects</a></li>
         <li><a href="#contact" :class="{ active: activeSection === 'contact' }">Contact</a></li>
         <li>
-          <a href="/assets/CV_SarveshMina.pdf" target="_blank" class="cv-button">📄 View My CV</a>
+          <a href="/assets/SarveshMina.pdf" target="_blank" class="cv-button">📄 View My CV</a>
         </li>
       </ul>
       <!-- Burger Menu for Mobile -->
