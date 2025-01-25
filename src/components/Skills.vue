@@ -1,4 +1,3 @@
-<!-- src/components/Skills.vue -->
 <template>
   <section id="skills" class="skills-section" data-aos="fade-up">
     <h2>Skills</h2>
@@ -49,15 +48,14 @@ export default {
           skills: [
             { name: 'Java', icon: ['fab', 'java'], url: 'https://www.java.com/' },
             { name: 'Python', icon: ['fab', 'python'], url: 'https://www.python.org/' },
-            { name: 'C/C++', icon: ['fas', 'laptop-code'], url: 'https://isocpp.org/' },
-            { name: 'C#', icon: ['fas', 'code'], url: 'https://docs.microsoft.com/en-us/dotnet/csharp/' }
+            { name: 'C++', icon: ['fas', 'code'], url: 'https://isocpp.org/' } // Corrected C++ icon
           ]
         },
         {
           name: 'Frontend Development',
           skills: [
-            { name: 'HTML5', icon: ['fab', 'html5'], url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
-            { name: 'CSS3', icon: ['fab', 'css3-alt'], url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+            { name: 'HTML5', icon: ['fab', 'html5'], url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' }, // HTML5 added
+            { name: 'CSS3', icon: ['fab', 'css3-alt'], url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' }, // CSS3 added
             { name: 'JavaScript', icon: ['fab', 'js'], url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
             { name: 'TypeScript', icon: ['fab', 'js'], url: 'https://www.typescriptlang.org/' },
             { name: 'Vue.js', icon: ['fab', 'vuejs'], url: 'https://vuejs.org/' },
@@ -67,12 +65,11 @@ export default {
         {
           name: 'DevOps & Tools',
           skills: [
+            { name: 'Git', icon: ['fab', 'git'], url: 'https://git-scm.com/' }, // Git icon added
+            { name: 'GitHub', icon: ['fab', 'github'], url: 'https://github.com/' },
             { name: 'Docker', icon: ['fab', 'docker'], url: 'https://www.docker.com/' },
             { name: 'AWS', icon: ['fab', 'aws'], url: 'https://aws.amazon.com/' },
-            { name: 'Git', icon: ['fab', 'git'], url: 'https://git-scm.com/' },
-            { name: 'GitHub', icon: ['fab', 'github'], url: 'https://github.com/' },
-            { name: 'VS Code', icon: ['fas', 'laptop-code'], url: 'https://code.visualstudio.com/' },
-            { name: 'Jenkins', icon: ['fas', 'tools'], url: 'https://www.jenkins.io/' }
+            { name: 'VS Code', icon: ['fas', 'laptop-code'], url: 'https://code.visualstudio.com/' } // VS Code added
           ]
         }
       ]
@@ -91,6 +88,7 @@ export default {
   }
 };
 </script>
+
 
 <style scoped>
 /* Section Styling */

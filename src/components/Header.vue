@@ -5,11 +5,11 @@
         <h1><a href="#">Sarvesh Mina</a></h1>
       </div>
       <ul :class="{ 'nav-active': navActive }">
-        <li><a href="#summary" :class="{ active: activeSection === 'summary' }">Summary</a></li>
-        <li><a href="#education-experience" :class="{ active: activeSection === 'education-experience' }">Education & Experience</a></li>
-        <li><a href="#skills" :class="{ active: activeSection === 'skills' }">Skills</a></li>
-        <li><a href="#projects" :class="{ active: activeSection === 'projects' }">Projects</a></li>
-        <li><a href="#contact" :class="{ active: activeSection === 'contact' }">Contact</a></li>
+        <li><a href="#summary" @click="smoothScroll($event, 'summary')" :class="{ active: activeSection === 'summary' }">Summary</a></li>
+        <li><a href="#education-experience" @click="smoothScroll($event, 'education-experience')" :class="{ active: activeSection === 'education-experience' }">Education & Experience</a></li>
+        <li><a href="#skills" @click="smoothScroll($event, 'skills')" :class="{ active: activeSection === 'skills' }">Skills</a></li>
+        <li><a href="#projects" @click="smoothScroll($event, 'projects')" :class="{ active: activeSection === 'projects' }">Projects</a></li>
+        <li><a href="#contact" @click="smoothScroll($event, 'contact')" :class="{ active: activeSection === 'contact' }">Contact</a></li>
         <li>
           <a href="/assets/SarveshMina.pdf" target="_blank" class="cv-button">📄 View My CV</a>
         </li>
@@ -55,12 +55,22 @@ export default {
         }
       });
     },
+    smoothScroll(event, sectionId) {
+      event.preventDefault(); // Prevent default jump behavior
+
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        this.closeNav(); // Close mobile nav after clicking
+      }
+    },
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
-    document.querySelectorAll("nav ul li a").forEach((link) => {
-      link.addEventListener("click", this.closeNav);
-    });
   },
   beforeUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -69,6 +79,11 @@ export default {
 </script>
 
 <style scoped>
+/* Enable Smooth Scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Global Reset */
 * {
   box-sizing: border-box;
