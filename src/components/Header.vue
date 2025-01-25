@@ -5,22 +5,13 @@
         <h1><a href="#">Sarvesh Mina</a></h1>
       </div>
       <ul :class="{ 'nav-active': navActive }">
+        <li><a href="#summary" :class="{ active: activeSection === 'summary' }">Summary</a></li>
+        <li><a href="#education-experience" :class="{ active: activeSection === 'education-experience' }">Education & Experience</a></li>
+        <li><a href="#skills" :class="{ active: activeSection === 'skills' }">Skills</a></li>
+        <li><a href="#projects" :class="{ active: activeSection === 'projects' }">Projects</a></li>
+        <li><a href="#contact" :class="{ active: activeSection === 'contact' }">Contact</a></li>
         <li>
-          <a href="#summary" :class="{ active: activeSection === 'summary' }">Summary</a>
-        </li>
-        <li>
-          <a href="#education-experience" :class="{ active: activeSection === 'education-experience' }">
-            Education & Experience
-          </a>
-        </li>
-        <li>
-          <a href="#skills" :class="{ active: activeSection === 'skills' }">Skills</a>
-        </li>
-        <li>
-          <a href="#projects" :class="{ active: activeSection === 'projects' }">Projects</a>
-        </li>
-        <li>
-          <a href="#contact" :class="{ active: activeSection === 'contact' }">Contact</a>
+          <a href="/assets/CV_SarveshMina.pdf" target="_blank" class="cv-button">📄 View My CV</a>
         </li>
       </ul>
       <!-- Burger Menu for Mobile -->
@@ -53,7 +44,7 @@ export default {
     },
     handleScroll() {
       const sections = document.querySelectorAll("section");
-      let scrollPosition = window.scrollY + 100; // Adjust for accuracy
+      let scrollPosition = window.scrollY + 100;
 
       sections.forEach((section) => {
         if (
@@ -90,12 +81,12 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #ffffff; /* White background */
+  background-color: #ffffff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
-/* Navbar Container */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -135,27 +126,6 @@ ul li a {
   transition: color 0.3s ease-in-out;
 }
 
-/* Hover Underline Effect */
-ul li a::after {
-  content: "";
-  display: block;
-  width: 0%;
-  height: 2px;
-  background-color: black;
-  transition: width 0.3s ease-in-out;
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-}
-
-ul li a:hover::after {
-  width: 100%;
-}
-
-ul li a:hover {
-  color: black;
-}
-
 /* Active Section Highlight */
 ul li a.active {
   font-weight: bold;
@@ -163,34 +133,20 @@ ul li a.active {
   border-bottom: 2px solid black;
 }
 
-/* Burger Menu */
-.burger {
-  display: none;
-  cursor: pointer;
+/* View My CV Button */
+.cv-button {
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.burger div {
-  width: 30px;
-  height: 3px;
-  background-color: #000;
-  margin: 6px;
-  transition: all 0.3s ease;
+.cv-button:hover {
+  background-color: #555;
 }
 
-/* Burger Animation */
-.burger .line1.active {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.burger .line2.active {
-  opacity: 0;
-}
-
-.burger .line3.active {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Mobile Responsive Styles */
+/* Mobile Responsive */
 @media (max-width: 768px) {
   ul {
     position: fixed;
