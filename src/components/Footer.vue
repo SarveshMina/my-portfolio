@@ -19,9 +19,6 @@
           <a href="https://linkedin.com/in/sarvesh-mina/" target="_blank" title="LinkedIn">
             <font-awesome-icon :icon="['fab', 'linkedin']" />
           </a>
-          <a href="https://sarveshmina.github.io/" target="_blank" title="Portfolio">
-            <font-awesome-icon :icon="['fas', 'globe']" />
-          </a>
         </div>
       </div>
     </div>
